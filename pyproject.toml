@@ -1,6 +1,6 @@
 [project]
 name = "timestr"
-version = "1.6.4"
+version = "0.0.1"
 authors = [
     { name="@stevepeak", email="hello@codecov.io" },
     { name="Jason Wilkes", email="notarealdeveloper@gmail.com" },

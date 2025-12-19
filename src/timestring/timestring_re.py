@@ -1,5 +1,5 @@
 import re
-TIMESTRING_RE = re.compile(re.sub('[\t\n\s]', '', re.sub(r'(\(\?\#[^\)]+\))', '', r'''
+TIMESTRING_RE = re.compile(re.sub(r'[\t\n\s]', '', re.sub(r'(\(\?\#[^\)]+\))', '', r'''
     (
         ((?P<prefix>between|from|before|after|\>=?|\<=?|greater\s+th(a|e)n(\s+a)?|less\s+th(a|e)n(\s+a)?)\s+)?
         (

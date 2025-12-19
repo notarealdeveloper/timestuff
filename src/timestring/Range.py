@@ -41,7 +41,7 @@ class Range(object):
         elif re.search(r'(\s(and|to)\s)', start):
             """Both sides where provided in the start
             """
-            start = re.sub('^(between|from)\s', '', start.lower())
+            start = re.sub(r'^(between|from)\s', '', start.lower())
             # Both arguments found in start variable
             r = tuple(re.split(r'(\s(and|to)\s)', start.strip()))
             self._dates = (Date(r[0], tz=tz), Date(r[-1], tz=tz))

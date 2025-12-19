@@ -1,0 +1,20 @@
+[project]
+name = "timestring"
+version = "1.6.4"
+authors = [
+    { name="@stevepeak", email='hello@codecov.io', },
+    { name="Jason Wilkes", email="notarealdeveloper@gmail.com" },
+]
+description = "Making time easier since Jan 17th, 2013 at 3:59pm"
+dependencies = [
+    "pytz",
+]
+
+[project.optional-dependencies]
+develop = [
+    "build",
+    "pytest",
+]
+
+[project.urls]
+source = "https://github.com/notarealdeveloper/timestring"

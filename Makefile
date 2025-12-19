@@ -1,39 +1,35 @@
-.PHONY: watch test
+PKG := timestring
 
-open:
-	subl --project timestring.sublime-project
+build:
+	pip install build
+	python -m build
 
-deploy: tag upload
+install: clean build
+	pip install dist/*.tar.gz
 
-tag:
-	git tag -a v$(shell python -c "import timestring;print timestring.version;") -m ""
-	git push origin v$(shell python -c "import timestring;print timestring.version;")
+uninstall:
+	pip uninstall $(PKG)
 
-upload:
-	python setup.py sdist upload
+develop:
+	pip install -e .[develop]
 
-compare:
-	hub compare $(shell git tag | tail -1)...master
+check:
+	pip install pytest
+	pytest -v tests/
 
-test:
-	. venv/bin/activate; pip uninstall -y timestring
-	. venv/bin/activate; python setup.py install
-	. venv/bin/activate; nosetests --rednose --with-cov --cov-config=.coveragerc
+clean:
+	rm -rfv dist/ build/ src/*.egg-info
 
-test3:
-	. venv/bin/activate; pip3 uninstall -y timestring
-	. venv/bin/activate; python3.3 setup.py install
-	. venv/bin/activate; python3.3 -m tests.tests
+push-test:
+	pip install twine
+	python -m twine upload --repository testpypi dist/*
 
-venv:
-	virtualenv venv
-	. venv/bin/activate; pip install -r requirements.txt
-	. venv/bin/activate; pip install -r tests/requirements.txt
-	. venv/bin/activate; python setup.py install
+pull-test:
+	pip install -i https://test.pypi.org/simple/ $(PKG)
 
-venv3:
-	. venv/bin/activate; pip3 install -r requirements.txt
-	. venv/bin/activate; python3.3 setup.py install
+push-prod:
+	pip install twine
+	python -m twine upload dist/*
 
-watch:
-	watchr Watch
+pull-prod:
+	pip install $(PKG)

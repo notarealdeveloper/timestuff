@@ -1,4 +1,4 @@
-PKG := timestr
+PKG := timestuff
 
 build:
 	pip install build

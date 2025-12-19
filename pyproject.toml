@@ -1,11 +1,11 @@
 [project]
-name = "timestr"
+name = "timestuff"
 version = "0.0.1"
 authors = [
     { name="Steve Peak", email="hello@codecov.io" },
     { name="Jason Wilkes", email="notarealdeveloper@gmail.com" },
 ]
-description = "Making time easier since Jan 17th, 2013 at 3:59pm"
+description = "Turning stuff into times since Jan 17th, 2013 at 3:59pm"
 dependencies = [
     "pytz",
 ]
@@ -17,4 +17,4 @@ develop = [
 ]
 
 [project.urls]
-source = "https://github.com/notarealdeveloper/timestr"
+source = "https://github.com/notarealdeveloper/timestuff"

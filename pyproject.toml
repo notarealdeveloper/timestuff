@@ -2,7 +2,7 @@
 name = "timestr"
 version = "0.0.1"
 authors = [
-    { name="@stevepeak", email="hello@codecov.io" },
+    { name="Steve Peak", email="hello@codecov.io" },
     { name="Jason Wilkes", email="notarealdeveloper@gmail.com" },
 ]
 description = "Making time easier since Jan 17th, 2013 at 3:59pm"
